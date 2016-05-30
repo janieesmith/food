@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Restaurant #<%= @restaurant.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Email address</dt>
+      <dd><%= @restaurant.email_address %></dd>
+
+      <dt>Logo</dt>
+      <dd><%= @restaurant.logo %></dd>
+
+      <dt>Phone number</dt>
+      <dd><%= @restaurant.phone_number %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @restaurant.address %></dd>
+
+      <dt>Sponsor name</dt>
+      <dd><%= @restaurant.sponsor_name %></dd>
+
+      <dt>Restaurant name</dt>
+      <dd><%= @restaurant.restaurant_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/restaurants" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/restaurants/<%= @restaurant.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_restaurant/<%= @restaurant.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
