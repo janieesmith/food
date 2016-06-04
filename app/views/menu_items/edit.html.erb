@@ -8,13 +8,17 @@
   <% end %>
 <% end %>
 
+
+
+
+
 <div class="page-header">
-  <h3>Edit Menu Item #<%= @menu_item.id %></h3>
+  <h3>Edit <%= @menu_item.menu_item_name %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/update_menu_item/<%= @menu_item.id %>" method="post">
+    <form enctype="multipart/form-data" action="/update_menu_item/<%= @menu_item.id %>" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -24,23 +28,25 @@
           Restaurant
         </label>
 
-        <input type="text" id="restaurant_id" name="restaurant_id" placeholder="Restaurant" class="form-control" value="<%= @menu_item.restaurant_id %>">
+
+        <%= select_tag :restaurant_id, options_from_collection_for_select(Restaurant.all, :id, :restaurant_name, @menu_item.restaurant_id) %>
+
       </div>
 
       <!-- Label and input for photo -->
       <div class="form-group">
         <label for="photo" class="control-label">
-          Photo
+          Upload a New Photo
         </label>
 
-        <input type="text" id="photo" name="photo" placeholder="Photo" class="form-control" value="<%= @menu_item.photo %>">
+        <input type="file" id="photo" name="photo" placeholder="Photo" class="form-control" value="<%= @menu_item.photo %>">
       </div>
 
       <!-- Label and input for availability -->
       <div class="checkbox">
         <label for="availability">
           <input type="checkbox" id="availability" name="availability" value="1" <%= "checked" if @menu_item.availability %>>
-          Availability
+          Check if Available Now
         </label>
       </div>
 

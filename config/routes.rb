@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # Routes for the Restaurant resource:
+root "restaurants#index"
+
   # CREATE
   get "/restaurants/new", :controller => "restaurants", :action => "new"
   post "/create_restaurant", :controller => "restaurants", :action => "create"

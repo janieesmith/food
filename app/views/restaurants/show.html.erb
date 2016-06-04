@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>Restaurant #<%= @restaurant.id %></h3>
+  <h3><%= @restaurant.restaurant_name %></h3>
 </div>
 
 <div class="row">
@@ -9,7 +9,9 @@
       <dd><%= @restaurant.email_address %></dd>
 
       <dt>Logo</dt>
-      <dd><%= @restaurant.logo %></dd>
+      <dd>
+        <img height="100px" src="<%= @restaurant.logo %>">
+      </dd>
 
       <dt>Phone number</dt>
       <dd><%= @restaurant.phone_number %></dd>
@@ -21,9 +23,24 @@
       <dd><%= @restaurant.sponsor_name %></dd>
 
       <dt>Restaurant name</dt>
-      <dd><%= @restaurant.restaurant_name %></dd>
+      <dd><%= @restaurant.restaurant_name %>      </dd>
 
     </dl>
+
+    <ul>
+      Menu Items
+      <% MenuItem.where(:restaurant_id => @restaurant.id).each do |menu_item| %>
+      <li>
+        <a href="/menu_items/<% menu_item.id %>">abc
+          <%= menu.item %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+
+
+
+
 
     <div class="btn-group btn-group-justified">
       <a href="/restaurants" class="btn btn-primary">

@@ -9,12 +9,12 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Restaurant #<%= @restaurant.id %></h3>
+  <h3>Edit <%= @restaurant.restaurant_name %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/update_restaurant/<%= @restaurant.id %>" method="post">
+    <form enctype="multipart/form-data" action="/update_restaurant/<%= @restaurant.id %>" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -33,7 +33,8 @@
           Logo
         </label>
 
-        <input type="text" id="logo" name="logo" placeholder="Logo" class="form-control" value="<%= @restaurant.logo %>">
+        <input type="file" id="logo" name="logo" placeholder="Logo" class="form-control" value="<%= @restaurant.logo %>">
+
       </div>
 
       <!-- Label and input for phone_number -->

@@ -1,15 +1,20 @@
 <div class="page-header">
-  <h3>Menu Item #<%= @menu_item.id %></h3>
+  <h3><%= @menu_item.menu_item_name %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
       <dt>Restaurant</dt>
-      <dd><%= @menu_item.restaurant_id %></dd>
+      <dd>
+      <%= @menu_item.restaurant.restaurant_name %>
+    </dd>
 
       <dt>Photo</dt>
-      <dd><%= @menu_item.photo %></dd>
+      <dd>
+        <img src="<%= @menu_item.photo %>
+        ">
+      </dd>
 
       <dt>Availability</dt>
       <dd><%= @menu_item.availability %></dd>
