@@ -18,14 +18,16 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for email_address -->
+      <!-- Label and input for restaurant_name -->
       <div class="form-group">
-        <label for="email_address" class="control-label">
-          Email address
+        <label for="restaurant_name" class="control-label">
+          Restaurant name
         </label>
 
-        <input type="text" id="email_address" name="email_address" placeholder="Email address" class="form-control" value="<%= @restaurant.email_address %>">
+        <input type="text" id="restaurant_name" name="restaurant_name" placeholder="Restaurant name" class="form-control" value="<%= @restaurant.restaurant_name %>">
       </div>
+
+
 
       <!-- Label and input for logo -->
       <div class="form-group">
@@ -35,6 +37,21 @@
 
         <input type="file" id="logo" name="logo" placeholder="Logo" class="form-control" value="<%= @restaurant.logo %>">
 
+      </div>
+
+      <!-- Label and input for sponsor_name -->
+      <div class="form-group">
+        <label for="sponsor_name" class="control-label">
+          Sponsor name
+        </label>
+
+      <!-- Label and input for email_address -->
+      <div class="form-group">
+        <label for="email_address" class="control-label">
+          Email address
+        </label>
+
+        <input type="text" id="email_address" name="email_address" placeholder="Email address" class="form-control" value="<%= @restaurant.email_address %>">
       </div>
 
       <!-- Label and input for phone_number -->
@@ -55,23 +72,10 @@
         <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @restaurant.address %>">
       </div>
 
-      <!-- Label and input for sponsor_name -->
-      <div class="form-group">
-        <label for="sponsor_name" class="control-label">
-          Sponsor name
-        </label>
 
         <input type="text" id="sponsor_name" name="sponsor_name" placeholder="Sponsor name" class="form-control" value="<%= @restaurant.sponsor_name %>">
       </div>
 
-      <!-- Label and input for restaurant_name -->
-      <div class="form-group">
-        <label for="restaurant_name" class="control-label">
-          Restaurant name
-        </label>
-
-        <input type="text" id="restaurant_name" name="restaurant_name" placeholder="Restaurant name" class="form-control" value="<%= @restaurant.restaurant_name %>">
-      </div>
 
       <button class="btn btn-warning">
         Update Restaurant
