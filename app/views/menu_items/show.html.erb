@@ -7,23 +7,24 @@
     <dl class="dl-horizontal">
       <dt>Restaurant</dt>
       <dd>
-      <%= @menu_item.restaurant.restaurant_name %>
+        <a href="/restaurants/<%= @menu_item.restaurant_id %>">
+      <%= @menu_item.restaurant.restaurant_name %></a>
     </dd>
 
+
+      <dt>Menu item name</dt>
+      <dd><%= @menu_item.menu_item_name %></dd>
       <dt>Photo</dt>
       <dd>
-        <img src="<%= @menu_item.photo %>
+        <img height="170px" src="<%= @menu_item.photo %>
         ">
       </dd>
-
-      <dt>Availability</dt>
-      <dd><%= @menu_item.availability %></dd>
 
       <dt>Description</dt>
       <dd><%= @menu_item.description %></dd>
 
-      <dt>Menu item name</dt>
-      <dd><%= @menu_item.menu_item_name %></dd>
+      <dt>Availability</dt>
+      <dd><%= @menu_item.availability %></dd>
 
     </dl>
 

@@ -5,39 +5,33 @@
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
-      <dt>Email address</dt>
-      <dd><%= @restaurant.email_address %></dd>
-
-      <dt>Logo</dt>
-      <dd>
-        <img height="100px" src="<%= @restaurant.logo %>">
-      </dd>
-
-      <dt>Phone number</dt>
-      <dd><%= @restaurant.phone_number %></dd>
-
-      <dt>Address</dt>
-      <dd><%= @restaurant.address %></dd>
-
-      <dt>Sponsor name</dt>
-      <dd><%= @restaurant.sponsor_name %></dd>
-
       <dt>Restaurant name</dt>
       <dd><%= @restaurant.restaurant_name %>      </dd>
-
+      <dt>Logo</dt>
+      <dd>
+        <img height="70px" src="<%= @restaurant.logo %>">
+      </dd>
+      <dt>Phone number</dt>
+      <dd><%= @restaurant.phone_number %></dd>
+      <dt>Address</dt>
+      <dd><%= @restaurant.address %></dd>
+      <dt>Sponsor name</dt>
+      <dd><%= @restaurant.sponsor_name %></dd>
+      <dt>Email address</dt>
+      <dd><%= @restaurant.email_address %></dd>
     </dl>
-
-    <ul>
-      Menu Items
-      <% MenuItem.where(:restaurant_id => @restaurant.id).each do |menu_item| %>
-      <li>
-        <a href="/menu_items/<% menu_item.id %>">abc
-          <%= menu.item %>
-        </a>
-      </li>
+    <dl>
+      <dt>Menu Items</dt>
+      <% MenuItem.where(:restaurant_id => @restaurant.id).each do |item| %>
+      <ul>
+        <li>
+          <a href="/menu_items/<%= item.id %>">
+            <%= item.menu_item_name %>
+          </a>
+        </li>
+      </ul>
       <% end %>
-    </ul>
-
+    </dl>
 
 
 
